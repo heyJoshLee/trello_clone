@@ -1,0 +1,12 @@
+<h2>
+  <a href="#/boards/{{slug}}" class="go_to_board"> {{title}} </a>
+</h2>
+<a href="#/boards/{{slug}}" class="go_to_board">
+  <img src="{{image}}" alt="{{title}}" onError="this.src='images/not_found.jpg'" />
+</a>
+
+<div class="tag_preview_container">
+  {{#each tags}}
+      <small class="tag_preview"><a href="#/tags/{{this}}">{{this}}</a></small>
+  {{/each}}
+</div>

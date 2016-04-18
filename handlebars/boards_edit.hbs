@@ -1,0 +1,31 @@
+<h1>Editing: {{title}}</h1>
+  <div class="form_photos_edit">
+    <label for="title_input_edit">
+      Title
+    </label>
+    <input type="text" name="title" id="title_input_edit" value="{{title}}" />
+
+    <label for="image_input">
+      Image URL
+    </label>
+    <input type="text" name="image" id="image_input_edit" value="{{image}}" />
+
+
+    <label for="body_edit">
+      Body
+    </label>
+    <textarea type="text" name="body" id="body_input_edit" >
+      {{body}}
+    </textarea>
+
+    <label for="tags_input_edit">
+      Categories
+      <br />
+      <small>
+        Enter all tags separated by spaces
+      </small>
+    </label>
+    <input type="text" name="tags" id="tags_input_edit" value="{{tags}}" />
+
+    <a class="save">Save Photo</a>
+  </div>

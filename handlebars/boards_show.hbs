@@ -1,0 +1,16 @@
+<div class="show_photo">
+  <h1> {{title}} </h1>
+
+  <img src="{{image}}" alt="{{title}}" onError="this.src='images/not_found.jpg'" class="photo_image" />
+  <p class="post_body"> {{body}} </p>
+
+  <div class="tag_preview_container">
+    {{#each tags}}
+        <small class="tag_preview"><a href="{{this}}">{{this}}</a></small>
+    {{/each}}
+  </div>
+  <div class="edit_and_delete_buttons">
+    <a href="#" class="edit">Edit</a>
+    <a href="#" class="delete">Delete</a>
+  </div>
+</div>

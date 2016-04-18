@@ -1,0 +1,136 @@
+@import "mixins.styl"
+@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans:400,100");
+  
+html
+  height: 100%
+
+body
+  padding: 10px 15px
+  font-family: 'Alegreya Sans', sans-serif;
+  background: colors.main; /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  #66145c 0%, #561154 51%, #401051 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  #66145c 0%,#561154 51%,#401051 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  #66145c 0%,#561154 51%,#401051 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  color: snow
+  height: 100%
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+
+  a
+    color: inherit
+    text-decoration: none
+  
+nav
+  border-bottom: 1px solid colors.secondary
+  paddin: 0
+  margin-bottom: 10px
+  color: colors.secondary
+  ul
+    padding: 0
+    margin: 0
+    list-style: none
+    li
+      display: inline-block
+      +
+        li
+          margin-left: 10px
+  h1
+    margin: 0
+    
+#boards_list
+  width: 100%
+  height: 100%
+  text-align: center
+  font-size: 0
+  padding: 0
+
+.board_preview
+  border-radius: 10px
+  background: colors.secondary
+  min-width: 300px
+  box-sizing: border-box
+  display: inline-block
+  margin: 10px
+  vertical-align: top
+  font-size: 18px
+  color: #7e1e96
+  img
+    width: 250px
+  .tag_preview
+    text-decoration: underline
+    margin: 0 10px
+
+.form_login,
+.form_register
+  color: colors.main
+  position: relative
+  box-sizing: border-box
+  width: 500px
+  text-align: center
+  margin: 0 auto
+  padding: 20px
+  border-radius: 10px
+  input
+    display: block
+    background: none
+    border: none
+    border-bottom: 1px solid colors.secondary
+    position: relative
+    margin: 10px auto
+    color: colors.secondary
+    width: 100%
+    height: 45px
+    font-size: 28px
+    &[type="submit"]
+      color: colors.secondary
+      border: none
+
+.form_boards_new,
+.form_boards_edit
+  color: colors.main
+  margin: 0 auto
+  padding: 10px
+  width: 500px
+  border-radius: 10px
+  background: rgba(255, 255, 255, 1.0)
+  text-align: center
+  position: relative
+  textarea
+  input
+    display: block
+    width: 100%
+    height: 30px
+    margin: 10px auto
+    border-radius: 10px
+    border: 1px solid rgba(0, 0, 0, 0.2)
+  .create_board
+    display: inline-block
+    margin: 10px 0
+    color: colors.secondary
+    border-radius: 10px
+    padding: 10px
+    background: rgba(39, 174, 96,1.0)
+  textarea
+    height: 200px
+
+.tag_link 
+  margin: 0 10px
+  &:hover
+    text-decoration: underline
+    
+
+.show_board
+  margin: 0 auto
+  text-align: center  
+  
+.edit_and_delete_buttons
+  text-align: center
+
+.edit,
+.delete
+  font-size: 24px
+  margin: 0 10px
+
+.board_image 
+  width: 300px
