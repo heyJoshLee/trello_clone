@@ -5,14 +5,6 @@ html {
 body {
   padding: 10px 15px;
   font-family: 'Alegreya Sans', sans-serif;
-  background: #66145c;
-/* Old browsers */
-  background: -moz-linear-gradient(-45deg, #66145c 0%, #561154 51%, #401051 100%);
-/* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #66145c 0%, #561154 51%, #401051 100%);
-/* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #66145c 0%, #561154 51%, #401051 100%);
-/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   color: #fffafa;
   height: 100%;
   background-attachment: fixed;
@@ -24,10 +16,10 @@ body a {
   text-decoration: none;
 }
 nav {
-  border-bottom: 1px solid #fffafa;
+  border-bottom: 1px solid #005b90;
   paddin: 0;
   margin-bottom: 10px;
-  color: #fffafa;
+  color: #005b90;
 }
 nav ul {
   padding: 0;
@@ -47,19 +39,20 @@ nav h1 {
   width: 100%;
   height: 100%;
   text-align: center;
-  font-size: 0;
   padding: 0;
 }
+#boards_list li {
+  margin: 0 10px;
+  vertical-align: top;
+}
 .board_preview {
-  border-radius: 10px;
-  background: #fffafa;
-  min-width: 300px;
+  background: #005b90;
+  width: 250px;
+  height: 150px;
   box-sizing: border-box;
   display: inline-block;
-  margin: 10px;
-  vertical-align: top;
   font-size: 18px;
-  color: #7e1e96;
+  color: #fffafa;
 }
 .board_preview img {
   width: 250px;
@@ -84,53 +77,54 @@ nav h1 {
   display: block;
   background: none;
   border: none;
-  border-bottom: 1px solid #fffafa;
+  border-bottom: 1px solid #005b90;
   position: relative;
   margin: 10px auto;
-  color: #fffafa;
+  color: #005b90;
   width: 100%;
   height: 45px;
   font-size: 28px;
 }
 .form_login input[type="submit"],
 .form_register input[type="submit"] {
-  color: #fffafa;
+  color: #005b90;
   border: none;
 }
-.form_boards_new,
-.form_boards_edit {
-  color: #66145c;
-  margin: 0 auto;
-  padding: 10px;
-  width: 500px;
-  border-radius: 10px;
-  background: #fff;
+.form_boards_new {
+  color: rgba(10,10,10,0.5);
+  height: 200px;
+  display: inline-block;
+  width: 250px;
+  height: 150px;
+  background: #e2e4e6;
   text-align: center;
   position: relative;
+  padding: 50px 0;
+  box-sizing: border-box;
 }
-.form_boards_new textarea,
-.form_boards_edit textarea,
-.form_boards_new input,
-.form_boards_edit input {
+.form_boards_new input {
   display: block;
-  width: 100%;
+  width: 90%;
   height: 30px;
-  margin: 10px auto;
+  margin: 0 auto 20px;
   border-radius: 10px;
   border: 1px solid rgba(0,0,0,0.2);
+  display: none;
 }
-.form_boards_new .create_board,
-.form_boards_edit .create_board {
-  display: inline-block;
-  margin: 10px 0;
-  color: #fffafa;
-  border-radius: 10px;
+.form_boards_new .submit_board {
+  display: block;
+  background: #008000;
   padding: 10px;
-  background: #27ae60;
+  color: #fff;
+  border-radius: 3px;
+  display: none;
 }
-.form_boards_new textarea,
-.form_boards_edit textarea {
-  height: 200px;
+.editing input,
+.editing .submit_board {
+  display: inline-block;
+}
+.editing .open_form {
+  display: none;
 }
 .tag_link {
   margin: 0 10px;

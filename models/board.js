@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-// Photo Schema
+// Board Schema
 var boardSchema = mongoose.Schema({
   title: {
     type: String

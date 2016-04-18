@@ -54,20 +54,10 @@ router.get("/:slug", function(req, res, next){
 });
 
 router.get("/", function(req, res, next){
-  var skip = req.query.skip ? req.query.skip : 0,
-      tag = req.query.tag;
 
-  if (tag) {
-    console.log("Got tag")
-    console.log(tag)
-    Board.find({tags: {$in: [tag]}}).sort({"created_at": "desc" }).limit(limit).skip(skip).exec(function(err, docs) {
+    Board.find().exec(function(err, docs) {
       res.send(docs);
     });
-  } else {
-    Board.find({}).sort({"created_at": "desc" }).limit(limit).skip(skip).exec(function(err, docs) {
-      res.send(docs);
-    });
-  }
 });
 
 module.exports = router;

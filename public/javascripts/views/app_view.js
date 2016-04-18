@@ -4,19 +4,9 @@ App.AppView = Backbone.View.extend({
 
   initialize: function() {
     this.collection = new App.Boards();
-
-    if (this.collection.length < 1) {
-      this.collection.fetch().done(function(){
-        new App.NavView();
-      });
-    } else {
-      new App.NavView();
-    }
-
-  },
-
-  render: function() {
+    console.log("collection is =")
+    console.log(this.collection)
+    new App.NavView();
   }
-
 
 });
