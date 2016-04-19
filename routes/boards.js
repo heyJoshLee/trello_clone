@@ -5,9 +5,17 @@ var Board = require("../models/board.js");
 var limit = 10;
 
 router.post('/', function(req, res, next) {
-  var board = new Board(req.body);
+  var board_values = req.body;
+  var board = new Board(board_values);
+
     board.save(function(err, doc) {
     res.send(doc)
+  });
+});
+
+router.get("/:id", function(req, res, next) {
+  Board.findOne({id: req.params.id}, function(err, doc) {
+    res.send(doc);
   });
 });
 
@@ -46,12 +54,6 @@ router.delete("/:id", function(req, res, next) {
   })
 });
 
-router.get("/:slug", function(req, res, next){
-  var slug = req.params.slug ;
-    Board.findOne({slug: slug}).sort({"created_at": "desc" }).exec(function(err, doc) {
-      res.send(doc);
-    });
-});
 
 router.get("/", function(req, res, next){
 

@@ -1,13 +1,12 @@
 App.Router = Backbone.Router.extend({
   routes: {
-    "tags"          : "renderTagsIndex",
-    "tags/:tag"     : "goToTagPage",
-    "boards/"       : "redirectToHome",
-    "boards/new"    : "renderNewBoard", 
-    "boards/:slug"  : "showBoard",
-    "login"         : "renderLogin",
-    "register"      : "renderRegister",
-    ""              : "renderIndexRoute",
+    "boards/"         : "redirectToHome",
+    "boards/new"      : "renderNewBoard", 
+    "boards/:id"      : "showBoard",
+    "users/:username" : "showUser",
+    "login"           : "renderLogin",
+    "register"        : "renderRegister",
+    ""                : "renderHomeRoute",
   },
 
   renderLogin: function() {
@@ -27,12 +26,17 @@ App.Router = Backbone.Router.extend({
     this.renderIndexRoute();
   },
 
-  showBoard: function(slug) {
-    var model = new App.Board({_id: slug});
+  showBoard: function(id) {
+    var model = new App.Board({_id: id});
     model.fetch().done(function(Board) {
       new App.BoardsShow({model: model});
     });
   },
+
+  showUser: function(username) {
+    new App.Index();
+  },
+
 
   goToTagPage: function(tag) {
     app.collection.fetch({
@@ -43,20 +47,9 @@ App.Router = Backbone.Router.extend({
     });
   },
 
-  renderTagsIndex: function() {
-    $.ajax({
-      url: '/tags',
-    })
-    .done(function(data) {
-      app.page.html(new App.TagsIndex({
-        collection: data
-      }).$el );
-    })
-    app.collection.fetch();
-  },
 
-  renderIndexRoute: function() {
-    new App.Index();
+  renderHomeRoute: function() {
+    new App.Home();
   }
 
 

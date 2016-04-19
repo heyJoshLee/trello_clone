@@ -11,9 +11,8 @@ App.BoardNew = Backbone.View.extend({
   },
 
   createBoard: function() {
-    console.log("hi")
       var title = this.$el.find("#title_input").val();
-      app.collection.create({title: title}, 
+      app.collection.create({title: title, author: "josh"}, 
         {
           wait : true,    // waits for server to respond with 200 before adding newly created model to collection
           success : function(model){

@@ -61,26 +61,45 @@ nav h1 {
   text-decoration: underline;
   margin: 0 10px;
 }
+#forms_container {
+  text-align: center;
+}
+.form_register {
+  background: #e2e4e6;
+}
+.form_login {
+  background: #005b90;
+}
+.form_filling_out input,
+.form_filling_out label,
+.form_filling_out a {
+  display: inline-block !important;
+}
 .form_login,
 .form_register {
-  color: #66145c;
+  display: inline-block;
+  vertical-align: top;
+  color: #fffafa;
+  border: 1px solid #fffafa;
   position: relative;
   box-sizing: border-box;
-  width: 500px;
+  width: 400px;
   text-align: center;
-  margin: 0 auto;
+  margin: 0 10px;
   padding: 20px;
-  border-radius: 10px;
+}
+.form_login label,
+.form_register label,
+.form_login a,
+.form_register a {
+  display: none;
 }
 .form_login input,
 .form_register input {
-  display: block;
+  display: none;
   background: none;
-  border: none;
-  border-bottom: 1px solid #005b90;
   position: relative;
   margin: 10px auto;
-  color: #005b90;
   width: 100%;
   height: 45px;
   font-size: 28px;

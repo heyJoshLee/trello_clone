@@ -54,6 +54,10 @@ this["JST"]["boards_show"] = Handlebars.template({"1":function(container,depth0,
     + "</div><div class=\"edit_and_delete_buttons\"><a href=\"#\" class=\"edit\">Edit</a><a href=\"#\" class=\"delete\">Delete</a></div></div>";
 },"useData":true});
 
+this["JST"]["home"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<form action=\"\" class=\"form_login\"><h1 class=\"launch_login\">Log in</h1><input for=\"username_input\" type=\"text\" name=\"username\" placeholder=\"username\"><input for=\"password_input\" type=\"password\" name=\"password\" placeholder=\"password\"><input type=\"submit\" value=\"Log in\" class=\"login_button\"></form><form action=\"\" class=\"form_register\"><h1 class=\"launch_register\">Register a new account</h1> <label for=\"username_input\">Username<input for=\"username_input\" type=\"text\" name=\"username\" id=\"username\"></label><label for=\"password_input\">Password<input for=\"password_input\" type=\"password\" name=\"password\" id=\"password\"></label><label for=\"password_confirm_input\">Confirm Password<input for=\"password_confirm_input\" type=\"password\" name=\"password2\" id=\"password2\"></label><a href=\"#\" id=\"registerAccount\"> Register </a></form>";
+},"useData":true});
+
 this["JST"]["index"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     return "<ul id=\"boards_list\"></ul>";
 },"useData":true});
@@ -63,7 +67,7 @@ this["JST"]["login"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":fun
 },"useData":true});
 
 this["JST"]["nav"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<ul><li><h1> <a href=\"/#\" id=\"main_logo\">Foodie</a> </h1></li><li><a href=\"/#tags\" id=\"tags_path\">Tags</a></li><li><a href=\"/#boards/new\" id=\"new_board\">New Board</a></li></ul>";
+    return "<ul><li><h1> <a href=\"/#\" id=\"main_logo\">Trello</a> </h1></li></ul>";
 },"useData":true});
 
 this["JST"]["register"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
