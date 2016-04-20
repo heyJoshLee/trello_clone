@@ -12,6 +12,8 @@ body
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
+  li
+    list-style: none
 
   a
     color: inherit
@@ -132,9 +134,11 @@ nav
 .editing
   input
   .submit_board
-    display: inline-block
+  .submit_list
+  a
+    display: block !important
   .open_form
-    display: none
+    display: none !important
 
 
 .tag_link 
@@ -145,10 +149,29 @@ nav
 
 .show_board
   margin: 0 auto
-  text-align: center  
+  color: colors.main
   
 .edit_and_delete_buttons
   text-align: center
+  
+.list
+  width: 250px
+  display: inline-block
+
+
+.lists_new
+  background: rgba(75, 128, 242, 0.4)
+  text-align: center
+  padding: 20px
+  box-sizing: border-box
+  input
+    margin: 0 auto
+  input
+  .submit_list
+    display: none
+    margin: 10px auto
+    &:hover
+      cursor: pointer
 
 .edit,
 .delete

@@ -13,6 +13,7 @@ var passport = require("passport");
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var boards = require('./routes/boards');
+var lists = require('./routes/lists');
 
 mongoose.connect("mongodb://localhost/trello");
 
@@ -52,6 +53,7 @@ app.use(passport.session());
 app.use('/', routes);
 app.use('/users', users);
 app.use('/boards', boards);
+app.use('/lists', lists);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

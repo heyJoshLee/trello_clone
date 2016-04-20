@@ -11,6 +11,9 @@ body {
   background-position: center center;
   background-size: cover;
 }
+body li {
+  list-style: none;
+}
 body a {
   color: inherit;
   text-decoration: none;
@@ -142,11 +145,13 @@ nav h1 {
   color: #005b90;
 }
 .editing input,
-.editing .submit_board {
-  display: inline-block;
+.editing .submit_board,
+.editing .submit_list,
+.editing a {
+  display: block !important;
 }
 .editing .open_form {
-  display: none;
+  display: none !important;
 }
 .tag_link {
   margin: 0 10px;
@@ -156,10 +161,32 @@ nav h1 {
 }
 .show_board {
   margin: 0 auto;
-  text-align: center;
+  color: #005b90;
 }
 .edit_and_delete_buttons {
   text-align: center;
+}
+.list {
+  width: 250px;
+  display: inline-block;
+}
+.lists_new {
+  background: rgba(75,128,242,0.4);
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.lists_new input {
+  margin: 0 auto;
+}
+.lists_new input,
+.lists_new .submit_list {
+  display: none;
+  margin: 10px auto;
+}
+.lists_new input:hover,
+.lists_new .submit_list:hover {
+  cursor: pointer;
 }
 .edit,
 .delete {

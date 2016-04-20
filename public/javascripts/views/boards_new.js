@@ -19,7 +19,6 @@ App.BoardNew = Backbone.View.extend({
             app.router.navigate("boards/" + model.get("_id"), {trigger: true, replace: true})
           }
         });
-
   },
 
   validate_form: function() {
