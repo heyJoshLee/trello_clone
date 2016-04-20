@@ -8,6 +8,8 @@ var listSchema = mongoose.Schema({
   board_title: {
     type: String
   },
+  items: [String],
+  
   created_at: {
     type: Date,
     default: Date.now

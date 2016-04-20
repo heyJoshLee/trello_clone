@@ -38,8 +38,6 @@ App.BoardsShow = Backbone.View.extend({
         app.page.html(self.$el);
 
         _.each(self.collection.toArray(), function(list_item) {
-          console.log("list is")
-          console.log(list_item)
           self.$el.find("#lists").append(new App.ListView({model: list_item}).$el);
         });
     });

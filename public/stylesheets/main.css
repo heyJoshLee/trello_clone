@@ -166,12 +166,16 @@ nav h1 {
 .edit_and_delete_buttons {
   text-align: center;
 }
+#lists {
+  pading: 0;
+}
 #lists li {
   width: 250px;
   display: inline-block;
   text-align: center;
   box-sizing: border-box;
   margin: 10px;
+  vertical-align: top;
 }
 .list_item {
   min-height: 200px;
@@ -193,6 +197,33 @@ nav h1 {
 }
 .lists_new input:hover,
 .lists_new .submit_list:hover {
+  cursor: pointer;
+}
+.items {
+  padding: 0;
+  position: relative;
+}
+.items .item {
+  margin: 0;
+  padding: 10px;
+  background: rgba(169,163,255,0.3);
+  box-sizing: border-box;
+}
+.card_new {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+  border: 1px solid #e2e4e6;
+  border-radius: 4px;
+}
+.save_list {
+  display: none;
+  box-sizing: border-box;
+  padding: 2px 4px;
+  margin: 10px margin;
+  color: #fffafa;
+}
+.save_list:hover {
   cursor: pointer;
 }
 .edit,

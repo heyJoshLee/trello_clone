@@ -57,13 +57,16 @@ router.post('/', function(req, res, next) {
 // });
 
 router.put("/:id", function(req, res, next) {
-  List.update( { _id: req.params["id"] }, 
+  var id = req.params["id"];
+  console.log("id is")
+  console.log(id)
+  console.log("body is")
+  console.log(req.body)
+  List.update( { _id: id }, 
     {
       $set: {
         title: req.body["title"],
-        image: req.body["image"],
-        body: req.body["body"],
-        tags: req.body["tags"]
+        items: req.body["items"]
       }
     }, function(err, doc) {
       if (err) {
