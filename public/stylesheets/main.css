@@ -138,6 +138,9 @@ nav h1 {
   border-radius: 3px;
   display: none;
 }
+.user_header {
+  color: #005b90;
+}
 .editing input,
 .editing .submit_board {
   display: inline-block;

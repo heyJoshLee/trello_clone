@@ -7,14 +7,17 @@ var limit = 10;
 router.post('/', function(req, res, next) {
   var board_values = req.body;
   var board = new Board(board_values);
-
     board.save(function(err, doc) {
     res.send(doc)
   });
 });
 
 router.get("/:id", function(req, res, next) {
-  Board.findOne({id: req.params.id}, function(err, doc) {
+  var id = req.params.id
+  console.log(id)
+  Board.findOne({_id: id}, function(err, doc) {
+    console.log("board returned is:")
+    console.log(doc)
     res.send(doc);
   });
 });
@@ -56,8 +59,11 @@ router.delete("/:id", function(req, res, next) {
 
 
 router.get("/", function(req, res, next){
+    console.log("fetch board!");
+    var username = req.query.username; 
+    console.log(username)
 
-    Board.find().exec(function(err, docs) {
+    Board.find({author: username}).exec(function(err, docs) {
       res.send(docs);
     });
 });

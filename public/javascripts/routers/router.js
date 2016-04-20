@@ -27,6 +27,7 @@ App.Router = Backbone.Router.extend({
   },
 
   showBoard: function(id) {
+    console.log("show board with board id" + id)
     var model = new App.Board({_id: id});
     model.fetch().done(function(Board) {
       new App.BoardsShow({model: model});
@@ -34,19 +35,9 @@ App.Router = Backbone.Router.extend({
   },
 
   showUser: function(username) {
-    new App.Index();
+    console.log("should show user!" + username);
+    new App.Index(username);
   },
-
-
-  goToTagPage: function(tag) {
-    app.collection.fetch({
-      traditional: true,
-      data: {tag: tag}
-    }).done(function(data){
-      new App.TagsShow({collection: data, tag: tag })
-    });
-  },
-
 
   renderHomeRoute: function() {
     new App.Home();

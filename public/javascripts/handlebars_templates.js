@@ -59,7 +59,11 @@ this["JST"]["home"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":func
 },"useData":true});
 
 this["JST"]["index"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<ul id=\"boards_list\"></ul>";
+    var helper;
+
+  return "<h1 class=\"user_header\"> All Boards for "
+    + container.escapeExpression(((helper = (helper = helpers.username || (depth0 != null ? depth0.username : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"username","hash":{},"data":data}) : helper)))
+    + " </h1><ul id=\"boards_list\"></ul>";
 },"useData":true});
 
 this["JST"]["login"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
