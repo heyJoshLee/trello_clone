@@ -1,6 +1,6 @@
 App.ListNew = Backbone.View.extend({
   tagName: "li",
-  className: "lists_new list",
+  className: "lists_new",
   template: App.templates["lists_new"],
 
   events: {

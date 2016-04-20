@@ -7,7 +7,6 @@ App.Index = Backbone.View.extend({
   },
 
   render: function() {
-    console.log()
     var self = this;
     this.$el.html(this.template({username: this.username}));
 

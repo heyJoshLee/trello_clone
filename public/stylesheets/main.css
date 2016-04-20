@@ -166,15 +166,22 @@ nav h1 {
 .edit_and_delete_buttons {
   text-align: center;
 }
-.list {
+#lists li {
   width: 250px;
   display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 10px;
+}
+.list_item {
+  min-height: 200px;
+  background: #005b90;
+  color: #fffafa;
 }
 .lists_new {
-  background: rgba(75,128,242,0.4);
-  text-align: center;
+  background: #e2e4e6;
+  color: rgba(10,10,10,0.5);
   padding: 20px;
-  box-sizing: border-box;
 }
 .lists_new input {
   margin: 0 auto;
