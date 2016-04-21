@@ -1,7 +1,12 @@
 <h3 class="list_title">{{title}}</h3>
+<input class="list_title_edit" name="title_value" value="{{title}}" />
 <ul class="items">
   {{#each items}}
     <li class="item"> {{this}} </li>
+    <li class="item_edit"> 
+
+      <input value={{this}} />
+    </li>
   {{/each}}
 </ul>
 <textarea name="card" class="card_new" placeholder="Add A new card"> </textarea>

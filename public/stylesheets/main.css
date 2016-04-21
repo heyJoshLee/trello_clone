@@ -182,6 +182,9 @@ nav h1 {
   background: #005b90;
   color: #fffafa;
 }
+.list_title_edit {
+  display: none;
+}
 .lists_new {
   background: #e2e4e6;
   color: rgba(10,10,10,0.5);

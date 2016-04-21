@@ -4,11 +4,39 @@ App.ListView = Backbone.View.extend({
   template: App.templates["lists_show"],
 
   events: {
+    "dblclick .list_title": "updateTitle",
+    "dblclick .item": "editItem",
     "click .card_new": "openForm",
-    "click .save_list": "updateItem"
+    "click .save_list": "addItem",
+    "blur .list_title_edit": "hideUpdateTitle"
   },
 
-  updateItem: function() {
+  editItem: function(e) {
+    console.log("should show")
+    $(e.target).next().toggle()
+    // $(e.target).hide();
+    // console.log($(e.target).next())
+  },
+
+  updateTitle: function(e) {
+    $(e.target).hide();
+    this.$el.find(".list_title_edit").show();
+  },
+
+  updateCompleteListItem: function() {
+    var item_values = this.$el.find(".item")
+    console.log(item_values)
+
+  },
+
+  hideUpdateTitle: function(e) {
+   $(e.target).hide();
+   this.$el.find(".list_title").show();
+   this.updateCompleteListItem();
+
+  },
+
+  addItem: function() {
     console.log("clicked")
     this.model.get("items").push(this.$el.find(".card_new").val())
     console.log(this.model.get("items"));
