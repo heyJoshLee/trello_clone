@@ -10,19 +10,16 @@ App.ListNew = Backbone.View.extend({
 
   createList: function() {
     var title = this.$el.find("#title_input").val(),
-        board_title = this.$el.find("#board_title").val();
-    console.log("board_title is")
-    console.log(board_title)
-
-    this.collection.create({
+        board_title = this.$el.find("#board_title").val()
+        self = this;
+        this.collection.create({
       title: title, 
       board_title: board_title
     }, {
       success: function(data) {
-        console.log("saved doc data is")
-        console.log(data)
-        app.page.find("#lists").append(
-          new App.ListView({ model: data }));
+        app.page.find("#lists").append(new App.ListView({ model: data }).$el);
+        self.$el.removeClass("editing");
+        self.$el.find("#title_input").val("");
       }
     });
   },
