@@ -4,55 +4,56 @@ App.ListView = Backbone.View.extend({
   template: App.templates["lists_show"],
 
   events: {
-    "dblclick .list_title": "updateTitle",
+    "dblclick .list_title": "editTitle",
     "dblclick .item": "editItem",
     "click .card_new": "openForm",
     "click .save_list": "addItem",
-    "blur .list_title_edit": "hideUpdateTitle"
+    "blur .list_title_edit": "hideUpdateTitle",
+    "blur input" : "hideInput"
   },
 
-  editItem: function(e) {
-    console.log("should show")
-    $(e.target).next().toggle()
-    // $(e.target).hide();
-    // console.log($(e.target).next())
-  },
-
-  updateTitle: function(e) {
-    $(e.target).hide();
-    this.$el.find(".list_title_edit").show();
-  },
-
-  updateCompleteListItem: function() {
-    var item_values = this.$el.find(".item")
-    console.log(item_values)
-
+  saveList: function() {
+    var values = {};
+    values["items"] = [];
+    values["title"] = this.$el.find(".list_title_edit").val();
+    _.each(this.$el.find("input:not(.list_title_edit)"), function(input) {
+      values["items"].push($(input).val());
+    });
+    console.log(values); 
+    this.model.save(values);
+    console.log(this.model.toJSON());
   },
 
   hideUpdateTitle: function(e) {
    $(e.target).hide();
    this.$el.find(".list_title").show();
-   this.updateCompleteListItem();
+   this.saveList();
+  },
 
+  hideInput: function(e) {
+    $(e.target).parents('.item_container').removeClass("item_editing")
+    this.saveList();
+  },
+
+  editItem: function(e) {
+    $(e.target).parent().addClass("item_editing")
+  },
+
+  editTitle: function(e) {
+    $(e.target).hide();
+    this.$el.find(".list_title_edit").show();
   },
 
   addItem: function() {
-    console.log("clicked")
     this.model.get("items").push(this.$el.find(".card_new").val())
-    console.log(this.model.get("items"));
     this.model.save();
-    this.$el.removeClass("editing");
-
-
+    this.$el.removeClass("adding_list_item");
   },
 
   openForm: function() {
-    this.$el.addClass("editing");
+    this.$el.addClass("adding_list_item");
   },
 
-  closeForm: function() {
-    this.$el.removeClass("editing");
-  },
 
   initialize: function() {
     this.listenTo(this.model, "change", this.render);

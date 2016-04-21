@@ -5,7 +5,6 @@ html {
 body {
   padding: 10px 15px;
   font-family: 'Alegreya Sans', sans-serif;
-  color: #fffafa;
   height: 100%;
   background-attachment: fixed;
   background-position: center center;
@@ -64,6 +63,42 @@ nav h1 {
   text-decoration: underline;
   margin: 0 10px;
 }
+.form_boards_new {
+  color: rgba(10,10,10,0.5);
+  height: 200px;
+  display: inline-block;
+  width: 250px;
+  height: 150px;
+  background: #e2e4e6;
+  text-align: center;
+  position: relative;
+  padding: 50px 0;
+  box-sizing: border-box;
+}
+.form_boards_new input {
+  display: block;
+  width: 90%;
+  height: 30px;
+  margin: 0 auto 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.2);
+  display: none;
+}
+.form_boards_new .submit_board {
+  display: block;
+  background: #008000;
+  padding: 10px;
+  color: #fff;
+  border-radius: 3px;
+  display: none;
+}
+.user_header {
+  color: #005b90;
+}
+.show_board {
+  margin: 0 auto;
+  color: #005b90;
+}
 #forms_container {
   text-align: center;
 }
@@ -112,64 +147,13 @@ nav h1 {
   color: #005b90;
   border: none;
 }
-.form_boards_new {
-  color: rgba(10,10,10,0.5);
-  height: 200px;
-  display: inline-block;
-  width: 250px;
-  height: 150px;
-  background: #e2e4e6;
-  text-align: center;
-  position: relative;
-  padding: 50px 0;
-  box-sizing: border-box;
-}
-.form_boards_new input {
-  display: block;
-  width: 90%;
-  height: 30px;
-  margin: 0 auto 20px;
-  border-radius: 10px;
-  border: 1px solid rgba(0,0,0,0.2);
-  display: none;
-}
-.form_boards_new .submit_board {
-  display: block;
-  background: #008000;
-  padding: 10px;
-  color: #fff;
-  border-radius: 3px;
-  display: none;
-}
-.user_header {
-  color: #005b90;
-}
-.editing input,
-.editing .submit_board,
-.editing .submit_list,
-.editing a {
-  display: block !important;
-}
-.editing .open_form {
-  display: none !important;
-}
-.tag_link {
-  margin: 0 10px;
-}
-.tag_link:hover {
-  text-decoration: underline;
-}
-.show_board {
-  margin: 0 auto;
-  color: #005b90;
-}
 .edit_and_delete_buttons {
   text-align: center;
 }
 #lists {
   pading: 0;
 }
-#lists li {
+#lists > li {
   width: 250px;
   display: inline-block;
   text-align: center;
@@ -184,6 +168,9 @@ nav h1 {
 }
 .list_title_edit {
   display: none;
+}
+.adding_list_item .save_list {
+  display: block;
 }
 .lists_new {
   background: #e2e4e6;
@@ -206,18 +193,32 @@ nav h1 {
   padding: 0;
   position: relative;
 }
-.items .item {
+.item_container {
+  padding: 0;
+}
+.item_container .item {
   margin: 0;
   padding: 10px;
   background: rgba(169,163,255,0.3);
   box-sizing: border-box;
 }
-.card_new {
-  width: 80%;
-  margin: 0 auto;
-  padding: 0;
-  border: 1px solid #e2e4e6;
-  border-radius: 4px;
+.item_container .item_edit {
+  display: none;
+}
+.item_editing .item {
+  display: none;
+}
+.item_editing .item_edit {
+  display: block;
+}
+.editing input,
+.editing .submit_board,
+.editing .submit_list,
+.editing a {
+  display: block !important;
+}
+.editing .open_form {
+  display: none !important;
 }
 .save_list {
   display: none;
@@ -229,11 +230,10 @@ nav h1 {
 .save_list:hover {
   cursor: pointer;
 }
-.edit,
-.delete {
-  font-size: 24px;
-  margin: 0 10px;
-}
-.board_image {
-  width: 300px;
+.card_new {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+  border: 1px solid #e2e4e6;
+  border-radius: 4px;
 }

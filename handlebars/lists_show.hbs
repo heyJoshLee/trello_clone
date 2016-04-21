@@ -2,11 +2,10 @@
 <input class="list_title_edit" name="title_value" value="{{title}}" />
 <ul class="items">
   {{#each items}}
-    <li class="item"> {{this}} </li>
-    <li class="item_edit"> 
-
-      <input value={{this}} />
-    </li>
+    <ul class="item_container">
+      <li class="item"> {{this}} </li>
+      <li class="item_edit"> <input value={{this}} /> </li>
+    </ul>
   {{/each}}
 </ul>
 <textarea name="card" class="card_new" placeholder="Add A new card"> </textarea>

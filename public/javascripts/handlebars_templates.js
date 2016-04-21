@@ -61,11 +61,11 @@ this["JST"]["lists_new"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main"
 this["JST"]["lists_show"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
     var alias1=container.lambda, alias2=container.escapeExpression;
 
-  return "<li class=\"item\"> "
+  return "<ul class=\"item_container\"><li class=\"item\"> "
     + alias2(alias1(depth0, depth0))
     + " </li><li class=\"item_edit\"> <input value="
     + alias2(alias1(depth0, depth0))
-    + " /></li>";
+    + " /> </li></ul>";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 

@@ -1,24 +1,31 @@
 @import "mixins.styl"
 @import url("https://fonts.googleapis.com/css?family=Alegreya+Sans:400,100");
-  
+
+
+//////////////////////////
+//main
+/////////////////////////
+
 html
   height: 100%
 
 body
   padding: 10px 15px
   font-family: 'Alegreya Sans', sans-serif;
-  color: snow
   height: 100%
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
   li
     list-style: none
-
   a
     color: inherit
     text-decoration: none
-  
+
+//////////////////////////
+//nav
+/////////////////////////
+
 nav
   border-bottom: 1px solid colors.secondary
   paddin: 0
@@ -36,6 +43,11 @@ nav
   h1
     margin: 0
     
+
+//////////////////////////
+//boards
+/////////////////////////
+
 #boards_list
   width: 100%
   height: 100%
@@ -58,6 +70,44 @@ nav
   .tag_preview
     text-decoration: underline
     margin: 0 10px
+    
+.form_boards_new
+  color: rgba(10, 10, 10, 0.5)
+  height: 200px
+  display: inline-block
+  width: 250px
+  height: 150px
+  background: colors.gray_bkg
+  text-align: center
+  position: relative
+  padding: 50px 0
+  box-sizing: border-box
+  input
+    display: block
+    width: 90%
+    height: 30px
+    margin:  0 auto 20px
+    border-radius: 10px
+    border: 1px solid rgba(0, 0, 0, 0.2)
+    display: none
+  .submit_board
+    display: block
+    background: green
+    padding: 10px
+    color: white
+    border-radius: 3px
+    display: none
+
+.user_header
+  color: colors.main
+
+.show_board
+  margin: 0 auto
+  color: colors.main
+
+//////////////////////////
+//home
+/////////////////////////
 
 #forms_container
   text-align: center
@@ -101,67 +151,25 @@ nav
       color: colors.secondary
       border: none
 
-.form_boards_new
-  color: rgba(10, 10, 10, 0.5)
-  height: 200px
-  display: inline-block
-  width: 250px
-  height: 150px
-  background: colors.gray_bkg
-  text-align: center
-  position: relative
-  padding: 50px 0
-  box-sizing: border-box
-  input
-    display: block
-    width: 90%
-    height: 30px
-    margin:  0 auto 20px
-    border-radius: 10px
-    border: 1px solid rgba(0, 0, 0, 0.2)
-    display: none
-  .submit_board
-    display: block
-    background: green
-    padding: 10px
-    color: white
-    border-radius: 3px
-    display: none
-    
-.user_header
-  color: colors.main
-    
-.editing
-  input
-  .submit_board
-  .submit_list
-  a
-    display: block !important
-  .open_form
-    display: none !important
 
-.tag_link 
-  margin: 0 10px
-  &:hover
-    text-decoration: underline
-    
-
-.show_board
-  margin: 0 auto
-  color: colors.main
   
 .edit_and_delete_buttons
   text-align: center
   
+//////////////////////////
+//list
+/////////////////////////
+
 #lists
   pading: 0
-  li
-    width: 250px
-    display: inline-block
-    text-align: center
-    box-sizing: border-box
-    margin: 10px
-    vertical-align: top
+  > 
+    li
+      width: 250px
+      display: inline-block
+      text-align: center
+      box-sizing: border-box
+      margin: 10px
+      vertical-align: top
 
 .list_item
   min-height: 200px
@@ -169,8 +177,11 @@ nav
   color: snow
   
 .list_title_edit
-  display: none
-  
+  display: none  
+
+.adding_list_item
+  .save_list
+    display: block
 
 .lists_new
   background: colors.gray_bkg
@@ -185,23 +196,40 @@ nav
     &:hover
       cursor: pointer
 
+//////////////////////////
+//item
+/////////////////////////
+
 .items
   padding: 0
   position: relative
+  
+
+.item_container 
+  padding: 0
   .item
     margin: 0
     padding: 10px
     background: rgba(169, 163, 255, 0.3)
     box-sizing: border-box
+  .item_edit
+    display: none
     
+.item_editing
+  .item
+    display: none
+  .item_edit
+    display: block
 
-.card_new
-  width: 80%
-  margin: 0 auto
-  padding: 0
-  border: 1px solid colors.gray_bkg
-  border-radius: 4px
-  
+.editing
+  input
+  .submit_board
+  .submit_list
+  a
+    display: block !important
+  .open_form
+    display: none !important
+    
 .save_list
   display: none
   box-sizing: border-box
@@ -211,10 +239,16 @@ nav
   &:hover
     cursor: pointer
 
-.edit,
-.delete
-  font-size: 24px
-  margin: 0 10px
 
-.board_image 
-  width: 300px
+//////////////////////////
+//card
+/////////////////////////
+
+.card_new
+  width: 80%
+  margin: 0 auto
+  padding: 0
+  border: 1px solid colors.gray_bkg
+  border-radius: 4px
+
+
