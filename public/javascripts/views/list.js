@@ -45,9 +45,9 @@ App.ListView = Backbone.View.extend({
   },
 
   addItem: function() {
-    this.model.get("items").push(this.$el.find(".card_new").val())
-    this.model.save();
+    this.model.get("items").push(this.$el.find(".card_new").val());
     this.$el.removeClass("adding_list_item");
+    this.model.save();
   },
 
   openForm: function() {
@@ -56,7 +56,7 @@ App.ListView = Backbone.View.extend({
 
 
   initialize: function() {
-    this.listenTo(this.model, "change", this.render);
+    this.listenTo(this.model, "sync", this.render);
     this.render();
   },
 
