@@ -5,10 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require("mongoose");
-var session = require("express-session");
+// var session = require("express-session");
 var stylus = require("stylus");
 var nib = require("nib");
-var passport = require("passport");
+// var passport = require("passport");
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -39,16 +39,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// express-session config
-app.use(session({
-  secret: "mykey",
-  saveUninitialized: true,
-  resave: true
-}));
+// // express-session config
+// app.use(session({
+//   secret: "mykey",
+//   saveUninitialized: true,
+//   resave: true
+// }));
 
-// passport config
-app.use(passport.initialize());
-app.use(passport.session());
+// // passport config
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 app.use('/', routes);
 app.use('/users', users);

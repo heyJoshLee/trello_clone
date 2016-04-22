@@ -75,7 +75,6 @@ App.ListView = Backbone.View.extend({
     this.$el.addClass("adding_list_item");
   },
 
-
   initialize: function() {
     this.listenTo(this.model, "sync", this.render);
     this.render();
