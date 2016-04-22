@@ -1,10 +1,10 @@
 <h3 class="list_title">{{title}}</h3>
-<input class="list_title_edit" name="title_value" value="{{title}}" />
+<input class="list_title_edit" name="title_value" value="{{title}}" /> <a class="delete_list" href="#"> X </a>
 <ul class="items">
   {{#each items}}
     <ul class="item_container">
       <li class="item"> {{this}} </li>
-      <li class="item_edit"> <input value={{this}} /> </li>
+      <li class="item_edit"> <input value={{this}} /> <a class="delete_list_item" href="#">X</a> </li>
     </ul>
   {{/each}}
 </ul>

@@ -9,7 +9,25 @@ App.ListView = Backbone.View.extend({
     "click .card_new": "openForm",
     "click .save_list": "addItem",
     "blur .list_title_edit": "hideUpdateTitle",
-    "blur input" : "hideInput"
+    "blur input" : "hideInput",
+    "click .delete_list_item": "deleteListItem",
+    "click .delete_list": "deleteList"
+  },
+
+  deleteList: function(e) {
+    e.preventDefault();
+    var want_to_delete = confirm("Are you sure you want to delete this list?");
+    console.log(want_to_delete);
+    if (want_to_delete) {
+      this.model.destroy();
+      this.remove();
+    }
+  },
+
+  deleteListItem: function(e) {
+    e.preventDefault();
+    $(e.target).parents(".item_container").remove();
+    this.saveList();
   },
 
   saveList: function() {

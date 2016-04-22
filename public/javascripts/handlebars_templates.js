@@ -65,7 +65,7 @@ this["JST"]["lists_show"] = Handlebars.template({"1":function(container,depth0,h
     + alias2(alias1(depth0, depth0))
     + " </li><li class=\"item_edit\"> <input value="
     + alias2(alias1(depth0, depth0))
-    + " /> </li></ul>";
+    + " /> <a class=\"delete_list_item\" href=\"#\">X</a> </li></ul>";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
@@ -73,7 +73,7 @@ this["JST"]["lists_show"] = Handlebars.template({"1":function(container,depth0,h
     + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
     + "</h3><input class=\"list_title_edit\" name=\"title_value\" value=\""
     + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
-    + "\" /><ul class=\"items\">"
+    + "\" /> <a class=\"delete_list\" href=\"#\"> X </a><ul class=\"items\">"
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.items : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "</ul><textarea name=\"card\" class=\"card_new\" placeholder=\"Add A new card\"> </textarea><a class=\"save_list\"> Save </a>";
 },"useData":true});
