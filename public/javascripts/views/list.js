@@ -8,7 +8,7 @@ App.ListView = Backbone.View.extend({
     "dblclick .item": "editItem",
     "click .card_new": "openForm",
     "click .save_list": "addItem",
-    "blur .list_title_edit": "hideUpdateTitle",
+    "blur .list_title_edit": "updateTitle",
     "blur input" : "hideInput",
     "click .delete_list_item": "deleteListItem",
     "click .delete_list": "deleteList"
@@ -42,9 +42,8 @@ App.ListView = Backbone.View.extend({
     console.log(this.model.toJSON());
   },
 
-  hideUpdateTitle: function(e) {
-   $(e.target).hide();
-   this.$el.find(".list_title").show();
+  updateTitle: function(e) {
+   this.$el.removeClass("editing_title");
    this.saveList();
   },
 
@@ -58,12 +57,16 @@ App.ListView = Backbone.View.extend({
   },
 
   editTitle: function(e) {
-    $(e.target).hide();
-    this.$el.find(".list_title_edit").show();
+    this.$el.addClass("editing_title");
   },
 
   addItem: function() {
-    this.model.get("items").push(this.$el.find(".card_new").val());
+    var list_value = this.$el.find(".card_new").val();
+    if(list_value == false ) {
+      alert("List item can't be empty!")
+      return;
+    }
+    this.model.get("items").push(list_value);
     this.$el.removeClass("adding_list_item");
     this.model.save();
   },

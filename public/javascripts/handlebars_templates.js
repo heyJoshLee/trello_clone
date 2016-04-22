@@ -31,15 +31,17 @@ this["JST"]["boards_new"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main
 },"useData":true});
 
 this["JST"]["boards_show"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var helper;
+    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "<h1> "
-    + container.escapeExpression(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"title","hash":{},"data":data}) : helper)))
-    + " </h1><ul id=\"lists\"></ul><div class=\"edit_and_delete_buttons\"><a href=\"#\" class=\"edit\">Edit</a><a href=\"#\" class=\"delete\">Delete</a></div>";
+  return "<div class=\"title_container\"> <h1 class=\"board_title\"> "
+    + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
+    + " </h1><input class=\"edit_title\" value=\""
+    + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
+    + "\"></div><ul id=\"lists\"></ul><div class=\"edit_and_delete_buttons\"><a href=\"#\" class=\"delete\">Delete Board</a></div>";
 },"useData":true});
 
 this["JST"]["home"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<form action=\"\" class=\"form_login\"><h1 class=\"launch_login\">Log in</h1><input for=\"username_input\" type=\"text\" name=\"username\" placeholder=\"username\"><input for=\"password_input\" type=\"password\" name=\"password\" placeholder=\"password\"><input type=\"submit\" value=\"Log in\" class=\"login_button\"></form><form action=\"\" class=\"form_register\"><h1 class=\"launch_register\">Register a new account</h1> <label for=\"username_input\">Username<input for=\"username_input\" type=\"text\" name=\"username\" id=\"username\"></label><label for=\"password_input\">Password<input for=\"password_input\" type=\"password\" name=\"password\" id=\"password\"></label><label for=\"password_confirm_input\">Confirm Password<input for=\"password_confirm_input\" type=\"password\" name=\"password2\" id=\"password2\"></label><a href=\"#\" id=\"registerAccount\"> Register </a></form>";
+    return "<form action=\"\" class=\"form_login\"><h1 class=\"launch_login\">Log in</h1><input for=\"username_input\" type=\"text\" name=\"username\" placeholder=\"username\"><input for=\"password_input\" type=\"password\" name=\"password\" placeholder=\"password\"><input type=\"submit\" value=\"Log in\" class=\"login_button\"></form><form action=\"\" class=\"form_register\"><h1 class=\"launch_register\">Register a new account</h1> <label for=\"username_input\">Username<input for=\"username_input\" type=\"text\" name=\"username\" id=\"username\"></label><label for=\"password_input\">Password<input for=\"password_input\" type=\"password\" name=\"password\" id=\"password\"></label><label for=\"password_confirm_input\">Confirm Password<input for=\"password_confirm_input\" type=\"password\" name=\"password2\" id=\"password2\"></label><a href=\"#\" id=\"registerAccount\"> Register </a></form><h1> Sessions are not yet supported. Please go to <a href=\"http://localhost:3000/#users/test\"> http://localhost:3000/#users/test</a>";
 },"useData":true});
 
 this["JST"]["index"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
@@ -69,11 +71,11 @@ this["JST"]["lists_show"] = Handlebars.template({"1":function(container,depth0,h
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "<h3 class=\"list_title\">"
+  return "<div class=\"list_title_container\"><h3 class=\"list_title\">"
     + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
     + "</h3><input class=\"list_title_edit\" name=\"title_value\" value=\""
     + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
-    + "\" /> <a class=\"delete_list\" href=\"#\"> X </a><ul class=\"items\">"
+    + "\" /> <a class=\"delete_list\" href=\"#\"> X </a></div><ul class=\"items\">"
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.items : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "</ul><textarea name=\"card\" class=\"card_new\" placeholder=\"Add A new card\"> </textarea><a class=\"save_list\"> Save </a>";
 },"useData":true});

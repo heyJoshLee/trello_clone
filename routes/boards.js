@@ -2,8 +2,6 @@ var express = require('express');
 var router = express.Router();
 var Board = require("../models/board.js");
 
-var limit = 10;
-
 router.post('/', function(req, res, next) {
   var board_values = req.body;
   var board = new Board(board_values);
@@ -16,13 +14,13 @@ router.get("/:id", function(req, res, next) {
   var id = req.params.id
   console.log(id)
   Board.findOne({_id: id}, function(err, doc) {
-    console.log("board returned is:")
-    console.log(doc)
     res.send(doc);
   });
 });
 
 router.put("/:id", function(req, res, next) {
+  console.log("new title is")
+  console.log(req.body["title"])
 
   Board.update( { _id: req.params["id"] }, 
     {

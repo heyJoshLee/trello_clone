@@ -3,25 +3,34 @@ App.BoardsShow = Backbone.View.extend({
   className: "show_board",
 
   events: {
-    "click .delete": "remove",
-    "click .edit": "edit"
+    "click .delete": "remove"
+    // Lists relation will not stay when I change title
+    // "dblclick .board_title": "editBoardTitle",
+    // "blur .edit_title": "saveTitle"
+  },
+
+  saveTitle: function(e) {
+    $(e.target).parent(".title_container").removeClass("edit_title");
+    var new_title = $(".edit_title").val();
+    this.model.save({title: new_title});
+  },
+
+  editBoardTitle: function(e) {
+    console.log("click")
+    $(e.target).parent(".title_container").addClass("edit_title");
   },
 
   remove: function(e) {
     e.preventDefault();
     this.model.destroy().done(function() {
-      window.history.back()
+      // not sure why this isn't updating correctly
+      app.router.navigate("users/" +"test", {trigger: true, replace: true})
     });
-  },
-
-  edit: function(e) {
-    e.preventDefault();
-    console.log("show edit")
-    new App.BoardsEdit({model: this.model});
   },
 
   initialize: function() {
     this.collection = new App.Lists();
+    this.listenTo(this.model, "sync", this.render);
     this.render();
   },
 

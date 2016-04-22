@@ -99,6 +99,17 @@ nav h1 {
   margin: 0 auto;
   color: #005b90;
 }
+.title_container input,
+.title_container .delete_list {
+  display: none;
+}
+.edit_title input,
+.edit_title .delete_list {
+  display: block;
+}
+.edit_title .board_title {
+  display: none;
+}
 #forms_container {
   text-align: center;
 }
@@ -219,6 +230,16 @@ nav h1 {
 }
 .editing .open_form {
   display: none !important;
+}
+.editing_title .list_title_edit,
+.editing_title .delete_list {
+  display: inline-block;
+}
+.editing_title .list_title {
+  display: none;
+}
+.delete_list {
+  display: none;
 }
 .save_list {
   display: none;

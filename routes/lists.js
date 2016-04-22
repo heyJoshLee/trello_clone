@@ -45,16 +45,6 @@ router.post('/', function(req, res, next) {
   })
 });
 
-// router.get("/:board_title", function(req, res, next) {
-//   var board_title = req.params["board_title"]
-//   console.log("Lookg foir lists under")
-//   console.log(board_title)
-//   List.find({board_title: board_title}, function(err, doc) {
-//     console.log("List returned is:")
-//     console.log(doc)
-//     res.send(doc);
-//   });
-// });
 
 router.put("/:id", function(req, res, next) {
   var id = req.params["id"];
